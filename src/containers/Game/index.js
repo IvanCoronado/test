@@ -6,6 +6,7 @@ const mapStateToProps = (state, ownProps) => {
     const match = state.game.byId[ownProps.matchId];
 
     return {
+        matchId: ownProps.matchId,
         time: (match && match.t) || undefined,
         playerStats: (match && match.playerStats) || {},
         teamOne: (match && match.teamStats && match.teamStats[100]) || {},

@@ -9,7 +9,9 @@ const colors = {
   navy: "#003461",
   greyDark: "#8BA3B7",
   greyMedium: "#D1DAE2",
-  greyLight: "#EEF1F4"
+  greyLight: "#EEF1F4",
+  gold: "#FFD700",
+  silver: "#C0C0C0",
 };
 
 const breakpoints = {

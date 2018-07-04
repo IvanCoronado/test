@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import { PlayerStats } from "../../components/PlayerStats/index";
-import { Grid, Column } from "../../components/Layout/index";
+import { Grid } from "../../components/Layout/index";
 import { Title, Body } from "../Typography/index";
+import { ChampionGoldFlag } from "../../containers/ChampionGoldFlag/index";
 
 export class Game extends PureComponent {
   render() {
@@ -10,7 +11,7 @@ export class Game extends PureComponent {
     return (
       <div>
         <Title my="25px">Minuto: {time ? (time / 60 / 1000).toFixed(2) : '0'}</Title>
-        <Grid columns="1fr 1fr" >
+        <Grid columns="1fr 1fr 1fr">
             <Grid columns="1fr">
                 <Title>Equipo 1</Title>
                 <Body>Torres: {(teamOne && teamOne.towersKilled) || '0' }</Body>
@@ -39,6 +40,9 @@ export class Game extends PureComponent {
               <PlayerStats name="9" stats={playerStats[9]} />
               <PlayerStats name="10" stats={playerStats[10]} />
           </Grid>
+            <Grid>
+                <ChampionGoldFlag />
+            </Grid>
         </Grid>
       </div>
     );
