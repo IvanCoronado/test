@@ -3,30 +3,32 @@ import { Title, Caption} from "../Typography/index";
 import { Grid, Column, Row } from "../Layout/index";
 import { ChampionAvatar } from "../ChampionAvatar/index";
 import { theme } from "../../theme";
+import { Stats } from "../Stats/index";
 
 export class PlayerStats extends PureComponent {
     render() {
-        const { stats } = this.props;
+        const { stats, time, isMvp } = this.props;
 
         return (
             <Fragment>
                 <Title>
-                    {stats && stats.summonerName}
+                    {stats && stats.summonerName} ({stats && stats.playerId})
                 </Title>
-                <Grid columns="min-content 1fr" columnsGap="12px">
+                <Grid columns="min-content 1fr" columnsGap="12px" color={isMvp ? theme.colors.greyLight : undefined}>
                     <ChampionAvatar name={stats && stats.championName} />
                     <Column justify="space-between">
                         <Row>
                             <Caption display="inline" color={theme.colors.orange}>{stats && stats.level}</Caption>
                         </Row>
-                        <Row>
-                            <Caption display="inline" color={theme.colors.green}>{stats && stats.kills}</Caption> /
-                            <Caption display="inline" color={theme.colors.red}>{stats && stats.deaths}</Caption> /
-                            <Caption display="inline" color={theme.colors.blue}>{stats && stats.assists}</Caption>
-                        </Row>
+                        <Stats
+                            kills={stats && stats.kills}
+                            deaths={stats && stats.deaths}
+                            assists={stats && stats.assists}
+                        />
                         <Row>
                             <Caption display="inline" color={theme.colors.gold}>{stats && stats.tg}</Caption>
-                            <Caption display="inline" color={theme.colors.silver}>({stats && stats.cg})</Caption>
+                            <Caption display="inline" color={theme.colors.silver}>({stats && stats.cg}) </Caption>
+                            <Caption display="inline" color={theme.colors.silver}> / {stats && (stats.tg / time ).toFixed(2)}</Caption>
                         </Row>
                     </Column>
                 </Grid>
