@@ -127,8 +127,7 @@ const reduceMatch = (state, game) => ({
                 ...((game && game.playerStats && game.playerStats[1] && game.playerStats[1].skills) || {}),
             ],
             items: [
-                ...((state && state.playerStats && state.playerStats[1].items) || {}),
-                ...((game && game.playerStats && game.playerStats[1] && game.playerStats[1].items) || {}),
+                ...((game && game.playerStats && game.playerStats[1] && game.playerStats[1].items) || ((state && state.playerStats && state.playerStats[1].items) || {})),
             ],
         },
         2: {
@@ -147,8 +146,7 @@ const reduceMatch = (state, game) => ({
                 ...((game && game.playerStats && game.playerStats[2] && game.playerStats[2].skills) || {}),
             ],
             items: [
-                ...((state && state.playerStats && state.playerStats[2].items) || {}),
-                ...((game && game.playerStats && game.playerStats[2] && game.playerStats[2].items) || {}),
+                ...((game && game.playerStats && game.playerStats[2] && game.playerStats[2].items) || ((state && state.playerStats && state.playerStats[2].items) || {})),
             ],
         },
         3: {
@@ -167,8 +165,7 @@ const reduceMatch = (state, game) => ({
                 ...((game && game.playerStats && game.playerStats[3] && game.playerStats[3].skills) || {}),
             ],
             items: [
-                ...((state && state.playerStats && state.playerStats[1].items) || {}),
-                ...((game && game.playerStats && game.playerStats[1] && game.playerStats[1].items) || {}),
+                ...((game && game.playerStats && game.playerStats[1] && game.playerStats[1].items) || ((state && state.playerStats && state.playerStats[1].items) || {})),
             ],
         },
         4: {
@@ -187,8 +184,7 @@ const reduceMatch = (state, game) => ({
                 ...((game && game.playerStats && game.playerStats[4] && game.playerStats[4].skills) || {}),
             ],
             items: [
-                ...((state && state.playerStats && state.playerStats[4].items) || {}),
-                ...((game && game.playerStats && game.playerStats[4] && game.playerStats[4].items) || {}),
+                ...((game && game.playerStats && game.playerStats[4] && game.playerStats[4].items) || ((state && state.playerStats && state.playerStats[4].items) || {})),
             ],
         },
         5: {
@@ -207,8 +203,7 @@ const reduceMatch = (state, game) => ({
                 ...((game && game.playerStats && game.playerStats[5] && game.playerStats[5].skills) || {}),
             ],
             items: [
-                ...((state && state.playerStats && state.playerStats[5].items) || {}),
-                ...((game && game.playerStats && game.playerStats[5] && game.playerStats[5].items) || {}),
+                ...((game && game.playerStats && game.playerStats[5] && game.playerStats[5].items) || ((state && state.playerStats && state.playerStats[5].items) || {})),
             ],
         },
         6: {
@@ -227,8 +222,7 @@ const reduceMatch = (state, game) => ({
                 ...((game && game.playerStats && game.playerStats[6] && game.playerStats[6].skills) || {}),
             ],
             items: [
-                ...((state && state.playerStats && state.playerStats[6].items) || {}),
-                ...((game && game.playerStats && game.playerStats[6] && game.playerStats[6].items) || {}),
+                ...((game && game.playerStats && game.playerStats[6] && game.playerStats[6].items) || ((state && state.playerStats && state.playerStats[6].items) || {})),
             ],
         },
         7: {
@@ -247,8 +241,7 @@ const reduceMatch = (state, game) => ({
                 ...((game && game.playerStats && game.playerStats[7] && game.playerStats[7].skills) || {}),
             ],
             items: [
-                ...((state && state.playerStats && state.playerStats[7].items) || {}),
-                ...((game && game.playerStats && game.playerStats[7] && game.playerStats[7].items) || {}),
+                ...((game && game.playerStats && game.playerStats[7] && game.playerStats[7].items) || ((state && state.playerStats && state.playerStats[7].items) || {})),
             ],
         },
         8: {
@@ -267,8 +260,7 @@ const reduceMatch = (state, game) => ({
                 ...((game && game.playerStats && game.playerStats[8] && game.playerStats[8].skills) || {}),
             ],
             items: [
-                ...((state && state.playerStats && state.playerStats[8].items) || {}),
-                ...((game && game.playerStats && game.playerStats[8] && game.playerStats[8].items) || {}),
+                ...((game && game.playerStats && game.playerStats[8] && game.playerStats[8].items) || ((state && state.playerStats && state.playerStats[8].items) || {})),
             ],
         },
         9: {
@@ -287,8 +279,7 @@ const reduceMatch = (state, game) => ({
                 ...((game && game.playerStats && game.playerStats[9] && game.playerStats[9].skills) || {}),
             ],
             items: [
-                ...((state && state.playerStats && state.playerStats[9].items) || {}),
-                ...((game && game.playerStats && game.playerStats[9] && game.playerStats[9].items) || {}),
+                ...((game && game.playerStats && game.playerStats[9] && game.playerStats[9].items) || ((state && state.playerStats && state.playerStats[9].items) || {})),
             ],
         },
         10: {
@@ -307,8 +298,7 @@ const reduceMatch = (state, game) => ({
                 ...((game && game.playerStats && game.playerStats[10] && game.playerStats[10].skills) || {}),
             ],
             items: [
-                ...((state && state.playerStats && state.playerStats[10].items) || {}),
-                ...((game && game.playerStats && game.playerStats[10] && game.playerStats[10].items) || {}),
+                ...((game && game.playerStats && game.playerStats[10] && game.playerStats[10].items) || ((state && state.playerStats && state.playerStats[10].items) || {})),
             ],
         },
     }

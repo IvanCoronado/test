@@ -14,7 +14,7 @@ export class Game extends PureComponent {
     return (
       <div>
         <Title my="25px">Minuto: {time}</Title>
-        <Grid columns="1fr 1fr 1fr">
+        <Grid columns="1fr 1fr">
             <Grid columns="1fr">
                 <Row><Title mr="15px">Equipo 1</Title> <Stats {...teamOneStats} /></Row>
                 <Events
@@ -49,9 +49,6 @@ export class Game extends PureComponent {
               <PlayerStats name="9" stats={playerStats[9]} time={time} isMvp={mvpId === 9} />
               <PlayerStats name="10" stats={playerStats[10]} time={time} isMvp={mvpId === 10} />
           </Grid>
-            <Grid>
-                <ChampionGoldFlag />
-            </Grid>
         </Grid>
       </div>
     );
