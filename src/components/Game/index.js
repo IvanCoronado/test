@@ -5,10 +5,11 @@ import { Title, Body } from "../Typography/index";
 import { ChampionGoldFlag } from "../../containers/ChampionGoldFlag/index";
 import { Stats } from "../Stats/index";
 import { Row } from "../Layout/index";
+import { Events } from "../Events/index";
 
 export class Game extends PureComponent {
   render() {
-    const { time, playerStats, mvpId, teamOne, teamOneStats, teamTwo, teamTwoStats } = this.props;
+    const { time, playerStats, mvpId, teamOne = {}, teamOneStats, teamTwo = {}, teamTwoStats } = this.props;
 
     return (
       <div>
@@ -16,11 +17,14 @@ export class Game extends PureComponent {
         <Grid columns="1fr 1fr 1fr">
             <Grid columns="1fr">
                 <Row><Title mr="15px">Equipo 1</Title> <Stats {...teamOneStats} /></Row>
-                <Body>Torres: {(teamOne && teamOne.towersKilled) || '0' }</Body>
-                <Body>Inhibidor: {(teamOne && teamOne.inhibitorsKilled) || '0' }</Body>
-                <Body>Primera sangre: {(teamOne === undefined && '-') || (teamOne.firstBlood ? 'Sí':'No')}</Body>
-                <Body>Nashors: {(teamOne && teamOne.baronsKilled) || '0' }</Body>
-                <Body mb="15px">Dragones: {(teamOne && teamOne.dragonsKilled) || '0' }</Body>
+                <Events
+                    teamId={100}
+                    towers={teamOne.towersKilled}
+                    inhibitors={teamOne.inhibitorsKilled}
+                    barons={teamOne.baronsKilled}
+                    drakes={teamOne.dragonsKilled}
+                    fb={teamOne.firstBlood}
+                />
 
                 <PlayerStats name="1" stats={playerStats[1]} time={time} isMvp={mvpId === 1} />
                 <PlayerStats name="2" stats={playerStats[2]} time={time} isMvp={mvpId === 2} />
@@ -30,11 +34,14 @@ export class Game extends PureComponent {
             </Grid>
           <Grid columns="1fr">
               <Row><Title mr="15px">Equipo 2</Title> <Stats {...teamTwoStats} /></Row>
-              <Body>Torres: {(teamTwo && teamTwo.towersKilled) || '0' }</Body>
-              <Body>Inhibidor: {(teamTwo && teamTwo.inhibitorsKilled) || '0' }</Body>
-              <Body>Primera sangre: {(teamTwo === undefined && '-') || (teamTwo.firstBlood ? 'Sí':'No')}</Body>
-              <Body>Nashors: {(teamTwo && teamTwo.baronsKilled) || '0' }</Body>
-              <Body mb="15px">Dragones: {(teamTwo && teamTwo.dragonsKilled) || '0' }</Body>
+              <Events
+                  teamId={200}
+                  towers={teamTwo.towersKilled}
+                  inhibitors={teamTwo.inhibitorsKilled}
+                  barons={teamTwo.baronsKilled}
+                  drakes={teamTwo.dragonsKilled}
+                  fb={teamTwo.firstBlood}
+              />
 
               <PlayerStats name="6" stats={playerStats[6]} time={time} isMvp={mvpId === 6} />
               <PlayerStats name="7" stats={playerStats[7]} time={time} isMvp={mvpId === 7} />
